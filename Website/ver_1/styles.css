@@ -43,9 +43,11 @@ img {
     padding: 100px;
     background: #fff;
     margin-top: 10px;
+    padding-bottom: 50px;
 }
 
 footer {
+    position: absolute;
     background: #333;
     color: #fff;
     text-align: center;

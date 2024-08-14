@@ -97,12 +97,22 @@ def main():
                     except Exception as e:
                         print(e)
                         speak(f"Sorry, I couldn't close {app_name}.")
-                    speak("I don't understand.")\
+                    speak("I don't understand.")
                     
                 elif "time" in query:
                     current_time = datetime.now().strftime("%I:%M %p")
                     responses = [f"The current time is {current_time}.", f"It's {current_time} at the moment"]
                     speak(random.choice(responses))
+
+                elif "swipe to the next desktop" or "next desktop" or "next screen" in query:
+                    responses = [f"Going to the next desktop", "sure thing!", "no problem!"]
+                    speak(random.choice(responses))
+                    pyautogui.hotkey("winleft", "ctrl", "right")
+                
+                elif "swipe to the previous desktop" or "previous desktop" or "go back" in query:
+                    responses = [f"Going to the previous desktop", "sure thing!", "no problem!"]
+                    speak(random.choice(responses))
+                    pyautogui.hotkey("winleft", "ctrl", "left")
 
                 if "goodbye" in query:
                     speak("Goodbye!! Have a Great time!!")
